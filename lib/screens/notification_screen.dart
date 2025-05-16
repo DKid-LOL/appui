@@ -128,9 +128,6 @@ class NotificationTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-          ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
