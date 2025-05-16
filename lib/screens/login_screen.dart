@@ -44,7 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 40),
 
-                    // Email
                     TextFormField(
                       style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
@@ -64,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 20),
 
-                    // Password
                     TextFormField(
                       obscureText: _obscurePassword,
                       style: const TextStyle(color: Colors.white),
@@ -75,7 +73,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: const TextStyle(color: Colors.white54),
                         suffixIcon: IconButton(
                           icon: Icon(
-                            _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                            _obscurePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
                             color: Colors.red,
                           ),
                           onPressed: () {
@@ -97,7 +97,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     const SizedBox(height: 10),
 
-                    // Quên mật khẩu
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -116,12 +115,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     const SizedBox(height: 10),
 
-                    // Divider khác
                     Row(
                       children: [
                         const Expanded(child: Divider(color: Colors.white24)),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 4,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(30),
@@ -137,7 +138,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     const SizedBox(height: 10),
 
-                    // Chuyển sang Đăng ký
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -146,7 +146,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(color: Colors.white),
                         ),
                         TextButton(
-                          onPressed: () => navigateTo(context, AppRouter.register),
+                          onPressed:
+                              () => navigateTo(context, AppRouter.register),
                           child: const Text(
                             'Đăng Kí Ngay',
                             style: TextStyle(color: Colors.pinkAccent),
@@ -157,7 +158,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     const Spacer(),
 
-                    // Nút đăng nhập
                     SizedBox(
                       width: double.infinity,
                       height: 50,

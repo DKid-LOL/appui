@@ -1,4 +1,5 @@
 import 'package:appui/routes/app_router.dart';
+import 'package:appui/screens/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:appui/screens/login_screen.dart';
 import 'package:appui/screens/register_screen.dart';
@@ -12,6 +13,9 @@ class NavigationService {
         break;
       case AppRouter.register:
         builder = (_) => const RegisterScreen();
+        break;
+      case AppRouter.notification:
+        builder = (_) => const NotificationScreen();
         break;
       default:
         builder = (_) => const LoginScreen();

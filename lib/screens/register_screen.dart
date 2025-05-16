@@ -3,7 +3,6 @@ import 'package:appui/core/navigation/navigation_service.dart';
 import 'package:appui/routes/app_router.dart';
 import 'package:appui/utils/dialog_utils.dart';
 
-
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -60,8 +59,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           _buildTextField(
                             label: 'Họ và tên',
                             controller: _name,
-                            validator: (val) =>
-                                val!.isEmpty ? 'Vui lòng nhập họ và tên' : null,
+                            validator:
+                                (val) =>
+                                    val!.isEmpty
+                                        ? 'Vui lòng nhập họ và tên'
+                                        : null,
                           ),
                           const SizedBox(height: 16),
                           _buildTextField(
@@ -70,7 +72,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             keyboardType: TextInputType.emailAddress,
                             validator: (val) {
                               if (val!.isEmpty) return 'Vui lòng nhập email';
-                              if (!val.contains('@')) return 'Email không hợp lệ';
+                              if (!val.contains('@'))
+                                return 'Email không hợp lệ';
                               return null;
                             },
                           ),
@@ -79,8 +82,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             label: 'Số điện thoại',
                             controller: _phone,
                             keyboardType: TextInputType.phone,
-                            validator: (val) =>
-                                val!.isEmpty ? 'Vui lòng nhập số điện thoại' : null,
+                            validator:
+                                (val) =>
+                                    val!.isEmpty
+                                        ? 'Vui lòng nhập số điện thoại'
+                                        : null,
                           ),
                           const SizedBox(height: 16),
                           _buildTextField(
@@ -100,8 +106,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 });
                               },
                             ),
-                            validator: (val) =>
-                                val!.length < 6 ? 'Mật khẩu tối thiểu 6 ký tự' : null,
+                            validator:
+                                (val) =>
+                                    val!.length < 6
+                                        ? 'Mật khẩu tối thiểu 6 ký tự'
+                                        : null,
                           ),
                           const SizedBox(height: 16),
                           _buildTextField(
@@ -117,13 +126,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                               onPressed: () {
                                 setState(() {
-                                  _obscureConfirmPassword = !_obscureConfirmPassword;
+                                  _obscureConfirmPassword =
+                                      !_obscureConfirmPassword;
                                 });
                               },
                             ),
                             validator: (val) {
-                              if (val!.isEmpty) return 'Vui lòng nhập lại mật khẩu';
-                              if (val != _password.text) return 'Mật khẩu không khớp';
+                              if (val!.isEmpty)
+                                return 'Vui lòng nhập lại mật khẩu';
+                              if (val != _password.text)
+                                return 'Mật khẩu không khớp';
                               return null;
                             },
                           ),
@@ -141,7 +153,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           style: TextStyle(color: Colors.white),
                         ),
                         TextButton(
-                          onPressed: () =>navigateTo(context, AppRouter.login),
+                          onPressed: () => navigateTo(context, AppRouter.login),
                           child: const Text(
                             'Đăng nhập',
                             style: TextStyle(color: Colors.pinkAccent),

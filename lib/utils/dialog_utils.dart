@@ -1,3 +1,5 @@
+import 'package:appui/core/navigation/navigation_service.dart';
+import 'package:appui/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 void showRegistrationSuccessDialog(BuildContext context) {
@@ -17,27 +19,16 @@ void showRegistrationSuccessDialog(BuildContext context) {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Image.asset(
-                  //   'assets/images/hand.png', // thay đổi đúng đường dẫn hình ảnh bạn dùng
-                  //   width: 120,
-                  //   height: 120,
-                  // ),
                   const SizedBox(height: 20),
                   const Text(
                     "Đăng Kí Thành Công",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   const Text(
                     "Trải Nghiệm Tử Vi Ngay",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
@@ -52,8 +43,8 @@ void showRegistrationSuccessDialog(BuildContext context) {
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
                       onPressed: () {
-                        Navigator.pop(context); // đóng dialog
-                        Navigator.pushReplacementNamed(context, '/login'); // quay lại login
+                        Navigator.pop(context);
+                        navigateTo(context, AppRouter.notification);
                       },
                       child: const Text(
                         "Đăng Nhập",
