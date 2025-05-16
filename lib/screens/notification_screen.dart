@@ -67,7 +67,7 @@ class NotificationScreen extends StatelessWidget {
         body: const TabBarView(
           children: [
             NotificationListView(),
-            NotificationListView(), // có thể thay đổi sau nếu cần
+            NotificationListView(),
             NotificationListView(),
           ],
         ),
